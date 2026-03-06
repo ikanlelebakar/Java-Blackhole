@@ -37,6 +37,8 @@ application {
     // Define the main class for the application.
     mainClass.set("com.blackhole.Main")
 
+    applicationDefaultJvmArgs = listOf("-Dprism.verbose=true", "-Dprism.forceGPU=true") // dGPU accalaration
+
     applicationDefaultJvmArgs = listOf("--enable-native-access=javafx.graphics")
 }
 
@@ -51,4 +53,9 @@ tasks.withType<JavaExec> {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.withType<JavaExec> {
+    environment("__NV_PRIME_RENDER_OFFLOAD", "1")
+    environment("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 }
