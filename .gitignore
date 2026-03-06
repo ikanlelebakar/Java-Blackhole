@@ -1,10 +1,37 @@
-# Ignore Gradle project-specific cache directory
-.gradle
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
 .project
-.settings
+.classpath
+.settings/
+*.swp
+*.swo
+.vscode/
+*.code-workspace
 
-# Ignore Gradle build output directory
-build
+# OS
+.DS_Store
+Thumbs.db
 
-# Ignore Kotlin plugin data
-.kotlin
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Kotlin
+.kotlin/
+
+# Temp files
+*.tmp
+*.bak
